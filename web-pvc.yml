@@ -1,13 +1,27 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: task3-pvc
+  name: task3-pvc1
   labels:
-    name: task3pvc
+    name: task3pvc1
 spec:
   accessModes:
    - ReadWriteOnce
   resources:
     requests:
       storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task3-pvc2
+  labels:
+    name: task3pvc2
+spec:
+  accessModes:
+   - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+
 
