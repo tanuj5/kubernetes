@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-deploy
+  labels:
+    task: task3
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      task: task3
+  template:
+    metadata:
+      name: myweb-pod
+      labels:
+        task: task3
+    spec:
+      containers: 
+        - name: myweb-con
+          image: vimal13/apache-webserver-php
+          volumeMounts:
+          - name: task3-web-vol1
+            mountPath: /var/www/html/
+          - name: task3-web-vol2
+            mountPath: /var/log/httpd/
+
+      volumes:
+      - name: task3-web-vol1
+        persistentVolumeClaim:
+          claimName: task3-web-pvc
+      - name: task3-web-vol2
+        persistentVolumeClaim:
+          claimName: task3-log-pvc
