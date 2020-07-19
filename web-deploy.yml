@@ -25,9 +25,9 @@ spec:
             mountPath: /var/log/httpd/
 
       volumes:
-      - name: task3-web-vol1
+      - name: task3-web1
         persistentVolumeClaim:
           claimName: task3-pvc1
-      - name: task3-web-vol2
+      - name: task3-web2
         persistentVolumeClaim:
           claimName: task3-pvc2
