@@ -19,15 +19,15 @@ spec:
         - name: myweb-con
           image: vimal13/apache-webserver-php
           volumeMounts:
-          - name: task3-web-vol1
+          - name: task3-web1
             mountPath: /var/www/html/
-          - name: task3-web-vol2
+          - name: task3-web2
             mountPath: /var/log/httpd/
 
       volumes:
       - name: task3-web-vol1
         persistentVolumeClaim:
-          claimName: task3-web-pvc
+          claimName: task3-pvc1
       - name: task3-web-vol2
         persistentVolumeClaim:
-          claimName: task3-log-pvc
+          claimName: task3-pvc2
